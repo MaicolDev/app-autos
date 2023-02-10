@@ -5,6 +5,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
 from .forms import FormularioAuto
 from .models import Auto
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -39,19 +40,22 @@ def inicio(request):
     return render(request,"inicio.html",{
         'autos':autos
     })
-
+@login_required
 def autos(request):
     autos = Auto.objects.filter(propietario=request.user, vendido__isnull=False).order_by("-fecha")
     return render(request,"autos.html",{
         'autos':autos
     })
 
+@login_required
 def auto_detalle(request, auto_id):
     auto =get_object_or_404(Auto ,pk=auto_id)
     return render(request,'auto_detalle.html',{
         'auto':auto
     })
 
+
+@login_required
 def auto_editar(request, auto_id):
     if request.method == "GET":
         auto = get_object_or_404(Auto,pk=auto_id)
@@ -67,8 +71,7 @@ def auto_editar(request, auto_id):
 
     
 
-
-
+@login_required
 def cerrar_sesion(request):
     logout(request)
     return redirect("registro")
@@ -91,7 +94,7 @@ def iniciar_sesion(request):
             return redirect("inicio")
 
        
-
+@login_required
 def crear_auto(request):
 
     if request.method =='GET':
