@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>
+    nuevo auto
+</h1>
+{{error}}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form}}
+
+    <button>
+        guardar
+    </button>
+</form>
+
+{% endblock %}

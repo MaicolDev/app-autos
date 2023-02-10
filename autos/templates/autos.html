@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for auto in autos %}
+    <div class="col">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{auto.marca}}</h5>
+          <p class="card-text">{{auto.modelo}}</p>
+          <p class="card-text">{{auto.descripcion}}</p>
+          <p class="card-text">{{auto.fecha}}</p>
+          <a href="{% url 'editar_auto' auto.id %}" class="btn btn-primary">Editar</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}
