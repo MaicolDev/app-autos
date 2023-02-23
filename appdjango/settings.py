@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'appdjango.wsgi.application'
             #conn_max_age=600)
     #}
 
-"postgres://pruebadb_ekf7_user:4kEkIYQXB4CBo4RtE3u2HoWfvA2lkc5W@dpg-cfrbsthgp3jo1dpbb32g-a.oregon-postgres.render.com/pruebadb_ekf7"
+
 
 DATABASES = {
         'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
