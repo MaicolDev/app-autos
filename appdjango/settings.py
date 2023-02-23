@@ -80,11 +80,17 @@ WSGI_APPLICATION = 'appdjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+#DATABASES = {
+        #'default': dj_database_url.config(
+            #default='postgresql://postgres:postgres@localhost:5432/appdjango',
+            #conn_max_age=600)
+    #}
+
+"postgres://pruebadb_ekf7_user:4kEkIYQXB4CBo4RtE3u2HoWfvA2lkc5W@dpg-cfrbsthgp3jo1dpbb32g-a.oregon-postgres.render.com/pruebadb_ekf7"
+
 DATABASES = {
-        'default': dj_database_url.config(
-            default='postgresql://postgres:postgres@localhost:5432/appdjango',
-            conn_max_age=600)
-    }
+        'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
 
 
 
