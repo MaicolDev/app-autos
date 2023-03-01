@@ -2,21 +2,34 @@
 
 {% block content %}
 
-<div class="row row-cols-1 row-cols-md-3 g-4">
+<main class="container">
+  
+      <div class="row row-cols-1 row-cols-md-3 g-4">
 
-    <div class="col">
-      <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h1>${{auto.precio}}</h1>
-          <h5 class="card-title">Marca: {{auto.marca}}</h5>
-          <p class="card-text">Modelo: {{auto.modelo}}</p>
-          <p class="card-text">Año de fabricacion del vehiculo: {{auto.año}}</p>
-          <p class="card-text">Propietario: {{auto.propietario}}</p>
-          <p class="card-text">Publicado: {{auto.fecha}}</p>
+        <div class="col">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h1>${{auto.precio}}</h1>
+              <h5 class="card-title">Marca: {{auto.marca}}</h5>
+              <p class="card-text">Modelo: {{auto.modelo}}</p>
+              <p class="card-text">Año de fabricacion del vehiculo: {{auto.año}}</p>
+              <p class="card-text">Propietario: {{auto.propietario}}</p>
+              <p class="card-text">Publicado: {{auto.fecha}}</p>
 
+              <button class="btn btn-primary">
+                Contactar
+              </button>
+    
+            </div>
+          </div>
         </div>
-      </div>
     </div>
-</div>
+    </div>
+
+  </div>
+  
+
+</main>
+
 {% endblock %}

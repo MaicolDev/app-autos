@@ -2,16 +2,33 @@
 
 {% block content %}
 
-<h1>iniciar sesion</h1>
 
-{{error}}
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
 
-<form method="POST">
-    {% csrf_token %}
-    {{form}}
-    <button>
-        iniciar sesion
-    </button>
-</form>
+            <form method="post" class="card card-body">
+
+                <h1 style="text-align: center;">Iniciar Sesion</h1>
+                <br>
+            
+                {{error}}
+                {% csrf_token %}
+                
+                <div class="mb-3">
+                    <input type="text" name="username" class="form-control" placeholder="Escriba su nombre de usuario" id="username">
+                </div>
+                <div class="mb-3">
+                    <input type="password" name="password" class="form-control" placeholder="Escriba su contraseña" id="password">
+                </div>
+                <button class="btn btn-primary">
+                    Ingresar
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+
+ 
 
 {% endblock %}

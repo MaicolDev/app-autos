@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="row row-cols-1 row-cols-md-3 g-4">
+<main class="container">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
     {% for auto in autos %}
     <div class="col">
       <div class="card">
@@ -22,4 +23,5 @@
     </div>
     {% endfor %}
 </div>
+</main>
 {% endblock %}

@@ -2,12 +2,51 @@
 
 {% block content %}
 
-<form method="POST">
-    {% csrf_token %}
-    {{formulario.as_p}}
-    <button>
-        Actualizar
-    </button>
-</form>
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+
+            <form method="POST" class="card card-body">
+
+                <h1 style="text-align: center;">Editar auto</h1>
+                <br>
+            
+                {{error}}
+                {% csrf_token %}
+                
+                <div class="mb-3">
+                    <label for="marca">marca</label>
+                    <input type="text" name="marca" class="form-control" placeholder="Marca" id="marca">
+                </div>
+                <div class="mb-3">
+                    <label for="modelo">modelo</label>
+                    <input type="text" name="modelo" class="form-control" placeholder="modelo" id="modelo">
+                </div>
+                <div class="mb-3">
+                    <label for="descripcion">descripcion</label>
+                    <input type="text" name="descripcion" class="form-control" placeholder="descripcion" id="descripcion">
+                </div>
+                <div class="mb-3">
+                    <label for="año">año</label>
+                    <input type="datetime" name="año" class="form-control" placeholder="año" id="año">
+                </div>
+                <div class="mb-3">
+                    <label for="precio">precio</label>
+                    <input type="number" name="precio" class="form-control" placeholder="precio" id="precio">
+                </div>
+                <div class="mb-3">
+                    <label for="vendido">vendido</label>
+                    <input type="checkbox" name="vendido" class="form-control" placeholder="vendido" id="vendido">
+                </div>
+                <button class="btn btn-primary">
+                    Guardar
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+
+
 
 {% endblock %}
